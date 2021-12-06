@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Boats That Float</title>
+    <link rel="shortcut icon" type="svg" href="/assets/favicon_boat.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shalimar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script type="text/javascript">
+        function show() {
+            var div = $("#div1").get(0);
+            if (div.style.display == "none") {
+                div.style.display = "flex";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="img1">
+        <img id="bg" src="/assets/paper_bg.png">
+    </div>
+    <class class="container">
+
+
+        <div class="tittle">
+            <h1>Tell a story and fold it into your paper boat</h1>
+        </div>
+
+        <form action="/action_page.php">
+            <div class="date-box">
+                <label for="boat-date">When</label>
+                <input type="date" id="boat-date" name="boat-date" autocomplete="off" style="text-align: center;font-size: 20px;">
+            </div>
+            <div class="loc-box">
+                <label for="boat-loc">Where</label>
+                <input placeholder="I'm at/in/on..." id="boat-loc" type="text" autocomplete="off">
+            </div>
+            <div class="input-box">
+                <label for="boat-input">Story</label>
+                <input placeholder="My boat is about a story..." id="boat-input" type="text" autocomplete="off" style="width:185px">
+            </div>
+
+        </form>
+        <div class="descprition">
+            <h2>We use audio to enhance your experience.</h2>
+        </div>
+        <audio id="sound" src="../assets/folding.m4a"></audio>
+        <button class="nav-button" id="collect-btn" onclick="show();playAud()">Fold</button>
+        <script>
+            let aud = document.getElementById("sound");
+
+            function playAud() {
+                aud.play();
+            }
+        </script>
+    </class>
+    <div id="div1" style="display:none">
+        <video id="MyVideo" src="../assets/folding.mp4" autoplay muted fullscreen></video>
+        <script>
+            myVid = document.getElementById("MyVideo");
+            myVid.addEventListener('ended', function() {
+                undefined
+                window.location.href = "/float_page/float.html";
+            });
+        </script>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>
