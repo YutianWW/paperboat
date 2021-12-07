@@ -132,7 +132,7 @@ img {
 @keyframes rock-boat {
     50% {
         -webkit-transform: rotate(-5deg) translateY(-4px);
-        opacity: 0.3;
+        opacity: 0.25;
     }
 }
 
