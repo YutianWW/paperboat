@@ -173,14 +173,14 @@ function init() {
         });
 }
 
-// function onWindowResize() {
+function onWindowResize() {
 
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 
-//     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-// }
+}
 
 function animate() {
     requestAnimationFrame(animate);
@@ -214,45 +214,32 @@ function onPointerMove(event) {
 
     // find intersections
     // clickable boat
-
     raycaster.setFromCamera(pointer, camera);
-
     const intersects = raycaster.intersectObjects(scene.children, true);
-
     if (intersects.length > 0 && intersects[0].object.name === 'Boat') {
         const target = intersects[0].object;
-
         if (INTERSECTED != target) {
-
             if (INTERSECTED) {
                 INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
             }
-
             document.getElementById("text").style.display = "block";
 
             // INTERSECTED.material.window.open('../frame_page/frame.html', '_blank');
-
             INTERSECTED = target;
             INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
             INTERSECTED.material.emissive.setHex(0x4A483B);
 
         }
-
     } else {
-
         if (INTERSECTED) INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
-
         INTERSECTED = null;
         // console.log("has intersection");
-
         document.getElementById("text").style.display = "none";
 
     }
-
 }
 
 window.addEventListener("click", () => {
-
     fetch('/data')
         .then(response => response.json())
         .then(data => {

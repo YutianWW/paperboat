@@ -42,8 +42,8 @@
                 <input placeholder="I'm at/in/on..." id="boat-loc" type="text" autocomplete="off">
             </div>
             <div class="input-box">
-                <label for="boat-input">Story</label>
-                <input placeholder="The story starts with..." id="boat-input" type="text" autocomplete="off">
+                <label for="boat-input">Messages</label>
+                <input placeholder="Hello there!" id="boat-input" type="text" autocomplete="off">
             </div>
         </form>
         <div class="descprition">
@@ -52,11 +52,9 @@
         <div class="bt">
             <input type="checkbox" class="nav-button" id="collect-btn" onclick="show();playAud()"></input>
         </div>
-
         <audio id="sound" src="../assets/folding.m4a"></audio>
         <script>
             let aud = document.getElementById("sound");
-
             function playAud() {
                 aud.play();
             }
