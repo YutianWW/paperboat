@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     let boatButton = document.getElementById("collect-btn");
     boatButton.addEventListener('click', () => {
 
-        // store the date, location, memo 
+        // store the date, location, story
         let boatInput = document.getElementById("boat-input").value;
 
         let boatInputObj = { "boat": boatInput };

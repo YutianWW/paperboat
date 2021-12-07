@@ -10,7 +10,6 @@ function setup() {
     rs = random(1000);
 }
 
-
 function draw() {
     background(0);
     randomSeed(rs);
@@ -49,14 +48,11 @@ function draw() {
     // noLoop();
 }
 
-
 function autoPlay() {
     var myAuto = document.getElementById('myaudio');
     myAuto.src = '/media/v2/sss.mp3';
     myAuto.play();
 }
-
-
 
 //check for scrolling on the window
 window.addEventListener('scroll', function() {

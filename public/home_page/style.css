@@ -12,16 +12,27 @@ h1 {
     font-weight: lighter;
     font-size: 80px;
     line-height: 100px;
-    color: #000000;
-    margin-bottom: 60px;
+    color: #ffffff;
+    text-shadow: 1px 5px 2px #3b3b3b;
+    margin-bottom: 40px;
 }
 
 h2 {
-    font-style: oblique;
+    font-style: italic;
     font-weight: 100;
     font-size: 30px;
     line-height: 50px;
-    color: rgb(41, 41, 41);
+    color: #ffffff;
+    text-shadow: 1px 3px 2px #3b3b3b;
+    margin: 10px;
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 38px;
+    line-height: 50px;
+    color: #ffffff;
+    text-shadow: 1px 3px 2px #3b3b3b;
     margin: 10px;
 }
 
@@ -68,37 +79,6 @@ div {
     transform: translate(-50%, -50%);
 }
 
-.nav-button {
-    /* position */
-    top: 50%;
-    left: 50%;
-    padding: 20px 40px 20px 40px;
-    /* visual */
-    font-family: 'Righteous', cursive;
-    font-size: 40px;
-    background-color: white;
-    color: #516A83;
-    border: 0 solid;
-    border-radius: 0.8em;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-.nav-button:hover {
-    color: black;
-    background-color: #96AfBD;
-}
-
-.enter:after,
-.enter:hover:after,
-.enter,
-.enter:hover {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
 .enter {
     position: absolute;
     top: 500px;
@@ -106,65 +86,54 @@ div {
     left: 0;
     right: 0;
     margin: auto;
-    width: 100px;
-    height: 100px;
-    background-color: #5e5e64;
-    background-color: rgba(17, 17, 17, 0.67);
-    z-index: 999999999;
-    text-align: center;
-    line-height: 100px;
+    width: 320px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
     text-decoration: none;
-    color: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    -webkit-box-shadow: 0 0 15px 2px #000;
-    -moz-box-shadow: 0 0 15px 2px #000;
-    box-shadow: 0 0 15px 2px #000;
+    animation-name: enterbt;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
 }
 
-.enter:after {
-    content: " ";
+@keyframes enterbt {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.bt {
+    display: inline;
+}
+
+img {
+    width: 50px;
     position: absolute;
-    top: 0;
+    top: 510px;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 340px;
     margin: auto;
-    width: 80px;
-    height: 80px;
-    background-color: #96AfBD;
-    background-color: rgba(150, 175, 189, 0.44);
-    z-index: 999999999;
-    text-align: center;
-    line-height: 80px;
-    text-decoration: none;
-    color: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    -webkit-box-shadow: 0 0 15px 2px #000;
-    -moz-box-shadow: 0 0 15px 2px #000;
-    box-shadow: 0 0 15px 2px #000;
 }
 
-.enter:hover {
-    -webkit-box-shadow: 0 0 4px 4px #96AfBD;
-    -moz-box-shadow: 0 0 4px 4px #96AfBD;
-    box-shadow: 0 0 4px 4px #96AfBD;
+.boat {
+    animation: rock-boat 2.5s ease-in-out infinite;
 }
 
-.enter:hover:after {
-    background-color: #96AfBD;
-    background-color: rgba(150, 175, 189, 0.67);
-}
-
-.hideThis {
-    -webkit-box-shadow: 0 0 0 0 #96AfBD;
-    -moz-box-shadow: 0 0 0 0 #96AfBD;
-    box-shadow: 0 0 0 0 #96AfBD;
-    opacity: 0;
-    z-index: -5;
+@keyframes rock-boat {
+    50% {
+        -webkit-transform: rotate(-5deg) translateY(-4px);
+        opacity: 0.3;
+    }
 }
 
 @media (max-width: 600px) {
@@ -175,9 +144,5 @@ div {
     h2 {
         margin: 5px;
         font-size: 25px;
-    }
-    p {
-        padding-top: 20px;
-        font-size: 18px;
     }
 }
